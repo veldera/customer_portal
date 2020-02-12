@@ -1,29 +1,20 @@
 server {
-    listen 80;
-    listen [::]:80; 
-
-    server_name ${NGINX_HOST};
-    server_tokens off;
-    location / {
-        return 301 https://$host$request_uri;
-    }
-
-    location /.well-known/acme-challenge/ {
-        root /var/www/certbot;
-    }
-}
-
-server {
     listen 443 ssl;
     listen [::]:443 ssl; 
 
+    # if you use cloudflare or other cdn, ditch letsencrypt
+    # in favor of real cert
+    # (uncomment if desired)
+    listen 80;
+    listen [::]:80 http2=on;
+
     server_name ${NGINX_HOST};
     server_tokens off;
-    ssl_certificate /etc/letsencrypt/live/${NGINX_HOST}/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/${NGINX_HOST}/privkey.pem;
+    # ssl_certificate /etc/letsencrypt/live/${NGINX_HOST}/fullchain.pem;
+    # ssl_certificate_key /etc/letsencrypt/live/${NGINX_HOST}/privkey.pem;
 
-    include /etc/letsencrypt/options-ssl-nginx.conf;
-    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
+    # include /etc/letsencrypt/options-ssl-nginx.conf;
+    # ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
 
     add_header Content-Security-Policy "frame-src 'self'; frame-ancestors 'none'; form-action 'self' https://www.paypal.com; upgrade-insecure-requests;";
 
