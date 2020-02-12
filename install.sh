@@ -42,6 +42,7 @@ read -ep "Enter Your API Username: " -i "${API_USERNAME:-}" API_USERNAME
 read -ep "Enter Your API Password: " -i "${API_PASSWORD:-}" API_PASSWORD
 read -ep "Enter Your Instance URL (e.g. https://example.sonar.software): " -i "${SONAR_URL:-}" SONAR_URL
 read -ep "Enter your email address: "  -i "${EMAIL_ADDRESS:-}" EMAIL_ADDRESS
+read -ep "Enter Intercom app ID (e.g. koexrb4k): "  -i "${INTERCOM_APP_ID:-}" INTERCOM_APP_ID
 
 cat <<- EOF > ".env"
 	APP_KEY=$APP_KEY
@@ -50,6 +51,7 @@ cat <<- EOF > ".env"
 	API_PASSWORD=$API_PASSWORD
 	SONAR_URL=$SONAR_URL
 	EMAIL_ADDRESS=$EMAIL_ADDRESS
+    INTERCOM_APP_ID=$INTERCOM_APP_ID
 EOF
 
 export APP_KEY
@@ -58,49 +60,15 @@ export API_USERNAME
 export API_PASSWORD
 export SONAR_URL
 export EMAIL_ADDRESS
+export INTERCOM_APP_ID
 
-docker pull sonarsoftware/customerportal:stable
-
-echo "### Deleting old certificate for $NGINX_HOST ..."
-rm -rf ./data/certbot/conf/live/$NGINX_HOST && \
-rm -rf ./data/certbot/conf/archive/$NGINX_HOST && \
-rm -rf ./data/certbot/conf/renewal/$NGINX_HOST.conf
-echo
-
-echo "### Requesting Let's Encrypt certificate for $NGINX_HOST ..."
-
-case "$EMAIL_ADDRESS" in
-  "") email_arg="--register-unsafely-without-email" ;;
-  *) email_arg="--email $EMAIL_ADDRESS" ;;
-esac
-
-docker-compose run --rm \
-    -p 80:80 \
-    -p 443:443 \
-    --entrypoint "\
-      certbot certonly --standalone \
-        $email_arg \
-        -d $NGINX_HOST \
-        --rsa-key-size 4096 \
-        --agree-tos \
-        --force-renewal" certbot
-echo
-
+docker-compose build
+docker-compose down
 docker-compose up -d
 
 until [ "`docker inspect -f {{.State.Running}} sonar-customerportal`"=="true" ]; do
     sleep 0.1;
 done;
-
-echo "### Reconfiguring renewal method to webroot..."
-
-docker-compose run --rm \
-    --entrypoint "\
-      certbot certonly --webroot \
-        -d $NGINX_HOST \
-        -w /var/www/certbot \
-        --force-renewal" certbot
-echo
 
 echo "### The app key is: $APP_KEY";
 echo "### Back this up somewhere in case you need it."

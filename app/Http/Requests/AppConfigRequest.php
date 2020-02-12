@@ -31,6 +31,7 @@ class AppConfigRequest extends FormRequest
             'mail_password' => 'required|string',
             'mail_port' => 'required|integer|between:0,65535',
             'mail_encryption' => 'boolean',
+            'intercom_app_id' => 'string',
             'mail_from_address' => 'required|string',
             'mail_from_name' => 'required|string',
             'isp_name' => 'required|string',

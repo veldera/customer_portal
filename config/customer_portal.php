@@ -7,6 +7,12 @@ return [
      */
 
     /*
+     * Intercom Application ID, if desired.
+     * Format example: keufjd8u
+     */
+    'intercom_app_id' => env('INTERCOM_APP_ID', ''),
+
+    /*
      * Company name to be presented to users (will be shown in the title, for example)
      */
     'company_name' => env('ISP_NAME', 'ISP'),

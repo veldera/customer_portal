@@ -23,20 +23,24 @@ document.addEventListener("DOMContentLoaded", function() {
 function buildIntercom() {
 fetch('/portal/profile/json')
   .then((response) => {
-    if (response.startsWith('<')) return false;
-    return response.json()
+    /*console.log(response)*/
+    if (response.redirected) {
+      return [{name: '', email: '', account_id: ''}]
+    } else {
+      return response.json()
+    }
   })
   .then((json) => {
-        if (json == false) {
-          window.intercomSettings = null
-          return
-        } else {
-        var d = new Date(Date.now)
-        var i = {
-            // vendor api public token
-            app_id: 'koexrb4k',
+    if (json == false) {
+      window.intercomSettings = null
+      return
+    } else {
+      var d = new Date(Date.now)
+      var i = {
+          // vendor api public token
+            app_id: '{{Config::get("app.intercom_app_id")}}',
 
-            // to be filled out programatically
+          // to be filled out programatically
             name: '',
             email: '',
             user_id: '',
@@ -49,11 +53,11 @@ fetch('/portal/profile/json')
         i.name = json[0].contact_name
         i.user_id = json[0].account_id
         window.intercomSettings = i;
-      }
-      })
+    }
+  })
 }
 </script>
-<script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/koexrb4k';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
+<script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/{{Config::get("app.intercom_app_id")}}';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
 <!-- end intercom embed -->
 
 <script src="/assets/libs/jquery/dist/jquery.min.js"></script>
