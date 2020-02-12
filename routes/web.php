@@ -70,6 +70,7 @@ Route::group(['middleware' => ['language']], function () {
          */
         Route::group(['prefix' => 'profile'], function () {
             Route::get("/", "ProfileController@show");
+            Route::get("/json", "ProfileController@toJson");
             Route::patch("/", "ProfileController@update");
             Route::patch("/password", "ProfileController@updatePassword");
         });

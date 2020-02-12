@@ -21,10 +21,11 @@ class ProfileController extends Controller
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function show()
+    public function toJson()
     {
         $user = get_user();
         $contact = $this->getContact();
+        
         //Format the phone numbers into something usable by the form
         $phoneNumbers = [
             PhoneNumber::WORK => null,
@@ -38,6 +39,36 @@ class ProfileController extends Controller
                 $phoneNumbers[$phoneNumber->getType()] = $phoneNumber->getNumber();
             }
         }
+
+        $country = SystemSetting::first()->country;
+
+        return [$user, $contact];
+    }
+
+
+
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function show()
+    {
+        $user = get_user();
+        $contact = $this->getContact();
+        
+        //Format the phone numbers into something usable by the form
+        $phoneNumbers = [
+            PhoneNumber::WORK => null,
+            PhoneNumber::MOBILE => null,
+            PhoneNumber::HOME => null,
+            PhoneNumber::FAX => null
+        ];
+
+        foreach ($contact->getPhoneNumbers() as $phoneNumber) {
+            if ($phoneNumber != null) {
+                $phoneNumbers[$phoneNumber->getType()] = $phoneNumber->getNumber();
+            }
+        }
+
         $country = SystemSetting::first()->country;
 
         return view("pages.profile.show", compact('user', 'contact', 'phoneNumbers', 'country'));
