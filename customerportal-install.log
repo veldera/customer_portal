@@ -1,0 +1,221 @@
+### docker is not installed, installing it now...
+Hit:1 http://mirrors.linode.com/ubuntu xenial InRelease
+Hit:2 http://mirrors.linode.com/ubuntu xenial-updates InRelease
+Hit:3 http://mirrors.linode.com/ubuntu xenial-backports InRelease
+Hit:4 http://security.ubuntu.com/ubuntu xenial-security InRelease
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+ca-certificates is already the newest version (20170717~16.04.2).
+ca-certificates set to manually installed.
+curl is already the newest version (7.47.0-1ubuntu2.14).
+software-properties-common is already the newest version (0.96.20.9).
+Suggested packages:
+  pinentry-doc
+The following NEW packages will be installed:
+  apt-transport-https gnupg-agent libassuan0 libnpth0 pinentry-curses
+0 upgraded, 5 newly installed, 0 to remove and 4 not upgraded.
+Need to get 340 kB of archives.
+After this operation, 1,418 kB of additional disk space will be used.
+Get:1 http://mirrors.linode.com/ubuntu xenial-updates/main amd64 apt-transport-https amd64 1.2.32 [26.5 kB]
+Get:2 http://mirrors.linode.com/ubuntu xenial/main amd64 libassuan0 amd64 2.4.2-2 [34.6 kB]
+Get:3 http://mirrors.linode.com/ubuntu xenial/main amd64 pinentry-curses amd64 0.9.7-3 [31.2 kB]
+Get:4 http://mirrors.linode.com/ubuntu xenial/main amd64 libnpth0 amd64 1.2-3 [7,998 B]
+Get:5 http://mirrors.linode.com/ubuntu xenial-updates/main amd64 gnupg-agent amd64 2.1.11-6ubuntu2.1 [240 kB]
+Fetched 340 kB in 0s (26.5 MB/s)
+Selecting previously unselected package apt-transport-https.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 56061 files and directories currently installed.)
+Preparing to unpack .../apt-transport-https_1.2.32_amd64.deb ...
+Unpacking apt-transport-https (1.2.32) ...
+Selecting previously unselected package libassuan0:amd64.
+Preparing to unpack .../libassuan0_2.4.2-2_amd64.deb ...
+Unpacking libassuan0:amd64 (2.4.2-2) ...
+Selecting previously unselected package pinentry-curses.
+Preparing to unpack .../pinentry-curses_0.9.7-3_amd64.deb ...
+Unpacking pinentry-curses (0.9.7-3) ...
+Selecting previously unselected package libnpth0:amd64.
+Preparing to unpack .../libnpth0_1.2-3_amd64.deb ...
+Unpacking libnpth0:amd64 (1.2-3) ...
+Selecting previously unselected package gnupg-agent.
+Preparing to unpack .../gnupg-agent_2.1.11-6ubuntu2.1_amd64.deb ...
+Unpacking gnupg-agent (2.1.11-6ubuntu2.1) ...
+Processing triggers for libc-bin (2.23-0ubuntu11) ...
+Setting up apt-transport-https (1.2.32) ...
+Setting up libassuan0:amd64 (2.4.2-2) ...
+Setting up pinentry-curses (0.9.7-3) ...
+Setting up libnpth0:amd64 (1.2-3) ...
+Setting up gnupg-agent (2.1.11-6ubuntu2.1) ...
+Processing triggers for libc-bin (2.23-0ubuntu11) ...
+OK
+Hit:1 http://mirrors.linode.com/ubuntu xenial InRelease
+Hit:2 http://mirrors.linode.com/ubuntu xenial-updates InRelease
+Hit:3 http://mirrors.linode.com/ubuntu xenial-backports InRelease
+Get:4 https://download.docker.com/linux/ubuntu xenial InRelease [66.2 kB]
+Hit:5 http://security.ubuntu.com/ubuntu xenial-security InRelease
+Get:6 https://download.docker.com/linux/ubuntu xenial/stable amd64 Packages [12.0 kB]
+Fetched 78.2 kB in 0s (190 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  aufs-tools cgroupfs-mount libltdl7 pigz
+Suggested packages:
+  mountall
+The following NEW packages will be installed:
+  aufs-tools cgroupfs-mount containerd.io docker-ce docker-ce-cli libltdl7
+  pigz
+0 upgraded, 7 newly installed, 0 to remove and 4 not upgraded.
+Need to get 85.3 MB of archives.
+After this operation, 384 MB of additional disk space will be used.
+Get:1 http://mirrors.linode.com/ubuntu xenial/universe amd64 pigz amd64 2.3.1-2 [61.1 kB]
+Get:2 http://mirrors.linode.com/ubuntu xenial/universe amd64 aufs-tools amd64 1:3.2+20130722-1.1ubuntu1 [92.9 kB]
+Get:3 http://mirrors.linode.com/ubuntu xenial/universe amd64 cgroupfs-mount all 1.2 [4,970 B]
+Get:4 http://mirrors.linode.com/ubuntu xenial/main amd64 libltdl7 amd64 2.4.6-0.1 [38.3 kB]
+Get:5 https://download.docker.com/linux/ubuntu xenial/stable amd64 containerd.io amd64 1.2.10-3 [19.9 MB]
+Get:6 https://download.docker.com/linux/ubuntu xenial/stable amd64 docker-ce-cli amd64 5:19.03.5~3-0~ubuntu-xenial [42.4 MB]
+Get:7 https://download.docker.com/linux/ubuntu xenial/stable amd64 docker-ce amd64 5:19.03.5~3-0~ubuntu-xenial [22.8 MB]
+Fetched 85.3 MB in 1s (43.7 MB/s)
+Selecting previously unselected package pigz.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 56106 files and directories currently installed.)
+Preparing to unpack .../pigz_2.3.1-2_amd64.deb ...
+Unpacking pigz (2.3.1-2) ...
+Selecting previously unselected package aufs-tools.
+Preparing to unpack .../aufs-tools_1%3a3.2+20130722-1.1ubuntu1_amd64.deb ...
+Unpacking aufs-tools (1:3.2+20130722-1.1ubuntu1) ...
+Selecting previously unselected package cgroupfs-mount.
+Preparing to unpack .../cgroupfs-mount_1.2_all.deb ...
+Unpacking cgroupfs-mount (1.2) ...
+Selecting previously unselected package containerd.io.
+Preparing to unpack .../containerd.io_1.2.10-3_amd64.deb ...
+Unpacking containerd.io (1.2.10-3) ...
+Selecting previously unselected package docker-ce-cli.
+Preparing to unpack .../docker-ce-cli_5%3a19.03.5~3-0~ubuntu-xenial_amd64.deb ...
+Unpacking docker-ce-cli (5:19.03.5~3-0~ubuntu-xenial) ...
+Selecting previously unselected package docker-ce.
+Preparing to unpack .../docker-ce_5%3a19.03.5~3-0~ubuntu-xenial_amd64.deb ...
+Unpacking docker-ce (5:19.03.5~3-0~ubuntu-xenial) ...
+Selecting previously unselected package libltdl7:amd64.
+Preparing to unpack .../libltdl7_2.4.6-0.1_amd64.deb ...
+Unpacking libltdl7:amd64 (2.4.6-0.1) ...
+Processing triggers for libc-bin (2.23-0ubuntu11) ...
+Processing triggers for ureadahead (0.100.0-19.1) ...
+Processing triggers for systemd (229-4ubuntu21.27) ...
+Setting up pigz (2.3.1-2) ...
+Setting up aufs-tools (1:3.2+20130722-1.1ubuntu1) ...
+Setting up cgroupfs-mount (1.2) ...
+Setting up containerd.io (1.2.10-3) ...
+Setting up docker-ce-cli (5:19.03.5~3-0~ubuntu-xenial) ...
+Setting up docker-ce (5:19.03.5~3-0~ubuntu-xenial) ...
+Setting up libltdl7:amd64 (2.4.6-0.1) ...
+Processing triggers for libc-bin (2.23-0ubuntu11) ...
+Processing triggers for ureadahead (0.100.0-19.1) ...
+Processing triggers for systemd (229-4ubuntu21.27) ...
+### docker-compose is not installed, installing it now...
+stable: Pulling from sonarsoftware/customerportal
+c64513b74145: Pulling fs layer
+01b8b12bad90: Pulling fs layer
+c5d85cf7a05f: Pulling fs layer
+b6b268720157: Pulling fs layer
+e12192999ff1: Pulling fs layer
+d39ece66b667: Pulling fs layer
+65599be66378: Pulling fs layer
+d541d725d5f1: Pulling fs layer
+cccc1e033226: Pulling fs layer
+a6ad7f330143: Pulling fs layer
+a87f5d26f8ff: Pulling fs layer
+db2f47d1a145: Pulling fs layer
+711a234b9c0e: Pulling fs layer
+f6032df3223e: Pulling fs layer
+5a70c3a7f3db: Pulling fs layer
+a11d47927704: Pulling fs layer
+46d71b7b228f: Pulling fs layer
+3f6a48f9378e: Pulling fs layer
+3cd8cbd1c6e2: Pulling fs layer
+266ba3476b1e: Pulling fs layer
+b6b268720157: Waiting
+e12192999ff1: Waiting
+d39ece66b667: Waiting
+65599be66378: Waiting
+d541d725d5f1: Waiting
+cccc1e033226: Waiting
+a6ad7f330143: Waiting
+a87f5d26f8ff: Waiting
+db2f47d1a145: Waiting
+711a234b9c0e: Waiting
+f6032df3223e: Waiting
+5a70c3a7f3db: Waiting
+a11d47927704: Waiting
+46d71b7b228f: Waiting
+3f6a48f9378e: Waiting
+3cd8cbd1c6e2: Waiting
+266ba3476b1e: Waiting
+01b8b12bad90: Verifying Checksum
+01b8b12bad90: Download complete
+c5d85cf7a05f: Verifying Checksum
+c5d85cf7a05f: Download complete
+c64513b74145: Verifying Checksum
+c64513b74145: Download complete
+b6b268720157: Verifying Checksum
+b6b268720157: Download complete
+e12192999ff1: Verifying Checksum
+e12192999ff1: Download complete
+d39ece66b667: Verifying Checksum
+d39ece66b667: Download complete
+cccc1e033226: Verifying Checksum
+cccc1e033226: Download complete
+65599be66378: Verifying Checksum
+65599be66378: Download complete
+a6ad7f330143: Verifying Checksum
+a6ad7f330143: Download complete
+a87f5d26f8ff: Verifying Checksum
+a87f5d26f8ff: Download complete
+711a234b9c0e: Verifying Checksum
+711a234b9c0e: Download complete
+f6032df3223e: Verifying Checksum
+f6032df3223e: Download complete
+d541d725d5f1: Verifying Checksum
+d541d725d5f1: Download complete
+db2f47d1a145: Verifying Checksum
+db2f47d1a145: Download complete
+5a70c3a7f3db: Verifying Checksum
+5a70c3a7f3db: Download complete
+46d71b7b228f: Verifying Checksum
+46d71b7b228f: Download complete
+3cd8cbd1c6e2: Verifying Checksum
+3cd8cbd1c6e2: Download complete
+a11d47927704: Verifying Checksum
+a11d47927704: Download complete
+3f6a48f9378e: Verifying Checksum
+3f6a48f9378e: Download complete
+c64513b74145: Pull complete
+01b8b12bad90: Pull complete
+c5d85cf7a05f: Pull complete
+b6b268720157: Pull complete
+e12192999ff1: Pull complete
+d39ece66b667: Pull complete
+266ba3476b1e: Verifying Checksum
+266ba3476b1e: Download complete
+65599be66378: Pull complete
+d541d725d5f1: Pull complete
+cccc1e033226: Pull complete
+a6ad7f330143: Pull complete
+a87f5d26f8ff: Pull complete
+db2f47d1a145: Pull complete
+711a234b9c0e: Pull complete
+f6032df3223e: Pull complete
+5a70c3a7f3db: Pull complete
+a11d47927704: Pull complete
+46d71b7b228f: Pull complete
+3f6a48f9378e: Pull complete
+3cd8cbd1c6e2: Pull complete
+266ba3476b1e: Pull complete
+Digest: sha256:b5660f4fabfc7ed4e3da66d5671cfbb58d9a355a15da26ceb1b54fa357f31d3f
+Status: Downloaded newer image for sonarsoftware/customerportal:stable
+docker.io/sonarsoftware/customerportal:stable
+### Deleting old certificate for 45.79.4.57 ...
+
+### Requesting Let's Encrypt certificate for 45.79.4.57 ...
+latest: Pulling from certbot/certbot
+Requested name 45.79.4.57 is an IP address. The Let's Encrypt certificate authority will not issue certificates for a bare IP address.

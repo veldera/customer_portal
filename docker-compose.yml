@@ -4,8 +4,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: sonarsoftware/customerportal:stable
-    container_name: sonar-customerportal
+    image: veldera/customerportal:stable
+    container_name: veldera-customerportal
     restart: always
     tty: true
     ports:
@@ -36,13 +36,6 @@ services:
     volumes:
       - ./data/certbot/conf:/etc/letsencrypt
       - ./data/certbot/www:/var/www/certbot
-
-  watchtower:
-    image: v2tec/watchtower
-    restart: always
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-    command: sonar-customerportal
 
 volumes:
   storage:
