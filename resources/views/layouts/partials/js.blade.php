@@ -23,9 +23,14 @@ document.addEventListener("DOMContentLoaded", function() {
 function buildIntercom() {
 fetch('/portal/profile/json')
   .then((response) => {
-    return response.json();
+    if (response.isJson()) return false;
+    return response.json()
   })
   .then((json) => {
+        if (json == false) {
+          window.intercomSettings = null
+          return
+        }
         var d = new Date(Date.now)
         var i = {
             // vendor api public token
