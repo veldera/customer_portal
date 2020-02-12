@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
 function buildIntercom() {
 fetch('/portal/profile/json')
   .then((response) => {
-    if (response.isJson()) return false;
+    if (response.startsWith('<')) return false;
     return response.json()
   })
   .then((json) => {
