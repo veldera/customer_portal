@@ -66,7 +66,7 @@ docker-compose build
 docker-compose down
 docker-compose up -d
 
-until [ "`docker inspect -f {{.State.Running}} sonar-customerportal`"=="true" ]; do
+until [ "`docker inspect -f {{.State.Running}} veldera-customerportal`"=="true" ]; do
     sleep 0.1;
 done;
 
