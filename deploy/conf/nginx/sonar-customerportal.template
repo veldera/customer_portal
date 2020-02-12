@@ -1,10 +1,10 @@
 server {
-    listen 443 ssl;
-    listen [::]:443 ssl; 
-
     # if you use cloudflare or other cdn, ditch letsencrypt
     # in favor of real cert
     # (uncomment if desired)
+    # listen 443 ssl;
+    # listen [::]:443 ssl; 
+
     listen 80;
     listen [::]:80;
 
