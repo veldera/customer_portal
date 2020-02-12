@@ -10,6 +10,7 @@ class SystemSetting extends Model
 
     protected $attributes = [
         'isp_name' => 'ISP',
+        'intercom_app_id' => '',
         'mail_encryption' => false,
         'ticket_priority' => 4,
         'data_usage_enabled' => false,
