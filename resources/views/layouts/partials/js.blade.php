@@ -30,7 +30,7 @@ fetch('/portal/profile/json')
         if (json == false) {
           window.intercomSettings = null
           return
-        }
+        } else {
         var d = new Date(Date.now)
         var i = {
             // vendor api public token
@@ -49,6 +49,7 @@ fetch('/portal/profile/json')
         i.name = json[0].contact_name
         i.user_id = json[0].account_id
         window.intercomSettings = i;
+      }
       })
 }
 </script>
