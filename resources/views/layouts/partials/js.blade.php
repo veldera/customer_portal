@@ -10,8 +10,6 @@ close=document.getElementById("close");close.addEventListener('click',function()
 
 <!-- intercom embed -->
 <script>
-var INTERCOM_ENABLED = false
-
 document.addEventListener("DOMContentLoaded", function() {
     // launch intercom
     try {
@@ -34,7 +32,10 @@ fetch('/portal/profile/json')
   })
   .then((json) => {
     if (json == false) {
-      window.intercomSettings = null
+      window.intercom = null
+      setTimeout(() => {
+      	window.intercom = null
+      }, 1000)
       return
     } else {
       var d = new Date(Date.now)
@@ -56,8 +57,7 @@ fetch('/portal/profile/json')
 }
 </script>
 <script>
-setTimeout(() => {
-            if (window.intercomSettings) {
+
                 (function() {
                     var w = window;
                     var ic = w.Intercom;
@@ -89,8 +89,6 @@ setTimeout(() => {
                         }
                     }
 			})();
-	}
-}, 400);
 </script>
 <!-- end intercom embed -->
 
