@@ -6,7 +6,7 @@ server {
     # in favor of real cert
     # (uncomment if desired)
     listen 80;
-    listen [::]:80 http2=on;
+    listen [::]:80;
 
     server_name ${NGINX_HOST};
     server_tokens off;
