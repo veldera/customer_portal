@@ -24,8 +24,8 @@ class CreateSystemSettingsTable extends Migration
             $table->boolean('mail_encryption')->default(false);
             $table->string('mail_from_address')->nullable();
             $table->string('mail_from_name')->nullable();
-            $table->string('intercom_app_id')->nullable();
             $table->string('isp_name')->nullable();
+            $table->string('intercom_app_id')->nullable();
             $table->string('decimal_separator')->nullable();
             $table->string('thousands_separator')->nullable();
             $table->string('currency_symbol')->nullable();

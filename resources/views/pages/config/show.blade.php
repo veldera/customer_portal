@@ -365,26 +365,7 @@
             </div>
          </div>
       </div>
-      <div class="card">
-         <div class="card-header">
-            <h4 class="card-header-title text-muted">
-               <i class="fe fe-credit-card mr-3"></i> Intercom Integration
-            </h4>
-         </div>
-         <div class="card-body">
-          
-            <div class="row mt-1">
-               <div class="col-12">
-                  <div class="form-group">
-                     <label>
-                     App ID
-                     </label>
-                     {!! Form::text("intercom_app_id",$systemSetting->intercom_app_id,['id' => 'intercom_app_id', 'class' => 'form-control', 'placeholder' => "", 'data-toggle' => 'tooltip', 'data-trigger' => 'hover','data-placement' => 'left','data-offset' => '3','data-html' => 'true', 'data-original-title' => 'Your app ID provided by Intercom']) !!}
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
+
       <div class="card">
          <div class="card-header">
             <h4 class="card-header-title text-muted">

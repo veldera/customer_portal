@@ -109,7 +109,6 @@ class AppConfigController extends Controller
                 'decimal_separator',
                 'thousands_separator',
                 'currency_symbol',
-                'intercom_app_id',
                 'country',
                 'state',
                 'login_page_message',
@@ -130,7 +129,7 @@ class AppConfigController extends Controller
                 'ticketing_enabled',
                 'inbound_email_account_id',
                 'ticket_group_id',
-                'ticket_priority',
+                'ticket_priority'
             ]));
 
             /**

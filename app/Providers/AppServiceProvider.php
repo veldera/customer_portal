@@ -23,7 +23,7 @@ class AppServiceProvider extends ServiceProvider
                 'app.name' => $systemSetting->isp_name,
                 'app.url' => $systemSetting->url,
                 'app.locale' => $systemSetting->locale,
-                'customer_portal.intercom_app_id' => $systemSetting->intercom_app_id,
+                'customer_portal.intercom_app_id' => env('INTERCOM_APP_ID'),
                 'customer_portal.company_name' => $systemSetting->isp_name,
                 'customer_portal.decimal_separator' => $systemSetting->decimal_separator,
                 'customer_portal.thousands_separator' => $systemSetting->thousands_separator,
