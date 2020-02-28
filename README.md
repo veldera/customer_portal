@@ -4,6 +4,19 @@
 
 This is a prebuilt and self-hosted customer portal for [Sonar](https://sonar.software).
 
+## Setup
+
+'sudo apt-get upgrade -y'
+'sudo apt-get update'
+'git clone (Repo URL)'
+'cd customer_potal'
+'sudo ./install.sh'
+git pull
+update.sh pull/combine
+cd/tools & .tools.sh
+sudo nano .env
+
+
 ## Quick start
 
 If you are a current Sonar customer, and you need assistance with any part of this process, feel free to contact us at support@sonar.software.
