@@ -6,14 +6,22 @@ This is a prebuilt and self-hosted customer portal for [Sonar](https://sonar.sof
 
 ## Setup
 
-'sudo apt-get upgrade -y'
-'sudo apt-get update'
-'git clone (Repo URL)'
-'cd customer_potal'
-'sudo ./install.sh'
+sudo apt-get upgrade -y
+
+sudo apt-get update
+
+git clone (Repo URL)
+
+cd customer_potal
+
+sudo ./install.sh
+
 git pull
-update.sh pull/combine
+
+update.sh pull/combin
+
 cd/tools & .tools.sh
+
 sudo nano .env
 
 
