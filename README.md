@@ -6,16 +6,12 @@ This is a prebuilt and self-hosted customer portal for [Sonar](https://sonar.sof
 
 ## Quick start
 
-These instructions will get you set up and running with SSL through [LetsEncrypt](https://letsencrypt.org) as well as automatic updates provided by [Watchtower](https://github.com/v2tec/watchtower).
-
 If you are a current Sonar customer, and you need assistance with any part of this process, feel free to contact us at support@sonar.software.
 
 You'll need a machine running Ubuntu 16 or 18 x64. **Please note that the customer portal will not work Ubuntu 19, as Docker is currently unsupported.** The installation script currently assumes a Debian-based distro.
 We recommend a minimum of 2 vCPUs and at least 2GB of RAM.
 
 It will need a public facing IP address and a valid domain name pointing to it (e.g. portal.myisp.com).
-
-**_If you get stuck, please don't hesitate to reach out to support@sonar.software for help. We are more than happy to help you get your portal setup!_**
 
 ## Getting started
 
