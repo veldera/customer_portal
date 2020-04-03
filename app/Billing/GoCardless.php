@@ -79,7 +79,7 @@ class GoCardless
                 'name_on_account' => get_user()->contact_name,
                 'type' => 'echeck',
                 'identifier' => $bankAccount->account_number_ending,
-                'auto' => true,
+                'auto' => false,
             ]);
         }
         catch (ApiException $e)
